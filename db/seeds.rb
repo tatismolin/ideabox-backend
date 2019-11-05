@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'rest-client'
+require 'json'
+url = RestClient.get("https://quote-garden.herokuapp.com/quotes/random")
+quotes = JSON.parse(url)
+
